@@ -93,7 +93,7 @@ function calculateTip() {
 function clearResults() {
   tipAmountEl.textContent = `$0.00`;
   totalAmountEl.textContent = `$0.00`;
-  resetBtn.setAttribute("disabled", true);
+  resetBtn.setAttribute("disabled", "");
 }
 
 resetBtn.addEventListener("click", reset);
