@@ -1,0 +1,260 @@
+@use "../abstracts" as a;
+
+.container {
+  background-color: a.$white-clr;
+  max-width: 40rem;
+  margin: 0 auto;
+  border-radius: 22px 22px 0 0;
+  padding: 1.55rem 1.5rem 2rem;
+  box-shadow: 0px 0px 17px 0px rgba(66, 68, 90, 0.2);
+
+  @include a.media-breakpoint-up(40.5em) {
+    border-radius: 22px;
+  }
+
+  @include a.media-breakpoint-up(63em) {
+    display: flex;
+    justify-content: space-between;
+    max-width: 57.5rem;
+    padding: 2rem 2rem 2rem 3rem;
+    max-height: 30rem;
+  }
+}
+
+.tip__calculate {
+  @include a.media-breakpoint-up(63em) {
+    flex-basis: 45%;
+    margin-top: 0.85rem;
+  }
+}
+
+form {
+  @include a.flex($align: flex-start);
+  gap: 2rem;
+  padding: 0.5rem;
+
+  @include a.media-breakpoint-up(63em) {
+    padding: 0;
+    gap: 2.4rem;
+    padding-bottom: 1rem;
+  }
+}
+
+label {
+  color: a.$darkGrayishCyan-clr;
+}
+
+.input__container {
+  @include a.flex($align: flex-start);
+  gap: 0.25rem;
+  width: 100%;
+}
+input[type="number"] {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  text-align: right;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: 1.6rem;
+  background-color: a.$veryLightGrayishCyan-clr;
+  padding: 0.3rem 1.05rem;
+  color: a.$veryDarkCyan-clr;
+  background-repeat: no-repeat;
+  background-position: 1.05rem 50%;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    border-color: a.$strongCyan-clr;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: a.$grayishCyan-clr;
+  }
+}
+
+.bill__amount {
+  background-image: url("../images/icon-dollar.svg");
+}
+
+.people__amount {
+  background-image: url("../images/icon-person.svg");
+}
+
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+.tip__options {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.2rem, 1fr));
+  gap: 0.85rem 0.9rem;
+  width: 100%;
+
+  @include a.media-breakpoint-up(63em) {
+    grid-template-columns: repeat(auto-fill, minmax(7.3rem, 1fr));
+    gap: 0.85rem;
+  }
+
+  & input[type="number"] {
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: a.$strongCyan-clr;
+  color: a.$veryDarkCyan-clr;
+}
+
+.tip__btn {
+  background-color: a.$veryDarkCyan-clr;
+  color: a.$white-clr;
+  display: inline-block;
+  min-width: 9.2rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  @include a.flex;
+  cursor: pointer;
+  transition: a.$transition;
+
+  @include a.media-breakpoint-up(63em) {
+    max-width: 7.3rem;
+    min-width: initial;
+  }
+
+  @include a.media-hover-effect {
+    &:hover {
+      background-color: lighten(a.$strongCyan-clr, 30%);
+      color: a.$veryDarkCyan-clr;
+    }
+  }
+}
+
+#custom {
+  font-size: 1.48rem;
+}
+
+.people__num.error input {
+  border: 2px solid #f42905;
+}
+
+.people__num.error .error__message {
+  display: block;
+}
+
+.text__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  & .error__message {
+    order: 1;
+    text-align: right;
+    color: #f42905;
+    display: none;
+  }
+}
+
+.tip__results {
+  margin-top: 1.4rem;
+  background-color: a.$veryDarkCyan-clr;
+  border-radius: 14px;
+  padding: 2.5rem 1.3rem 1.5rem 1.5rem;
+
+  @include a.media-breakpoint-up(63em) {
+    margin-top: 0;
+    flex-basis: 49%;
+    padding: 3.5rem 2.5rem 2.5rem 2.35rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.result {
+  @include a.flex($direction: row, $justify: space-between);
+
+  &:last-of-type {
+    margin-top: 1.2rem;
+  }
+
+  &__heading {
+    color: a.$white-clr;
+  }
+
+  &__person {
+    color: a.$grayishCyan-clr;
+    font-size: 0.8rem;
+    display: inline-block;
+  }
+
+  &__amount {
+    color: a.$strongCyan-clr;
+    font-size: 2rem;
+    margin-top: -5px;
+    max-width: 14rem;
+  }
+
+  @include a.media-breakpoint-up(63em) {
+    margin-top: -8px;
+
+    &:last-of-type {
+      margin-top: 2rem;
+    }
+    &__amount {
+      font-size: 2.9rem;
+    }
+  }
+}
+
+.resetBtn {
+  margin-top: 1.85rem;
+  border: none;
+  text-transform: uppercase;
+  width: 100%;
+  background-color: a.$strongCyan-clr;
+  color: a.$veryDarkCyan-clr;
+  font-family: inherit;
+  padding: 0.57rem 0;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: a.$transition;
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: grayscale(1);
+
+    &:hover {
+      background-color: lighten(a.$strongCyan-clr, 0);
+    }
+  }
+
+  @include a.media-hover-effect {
+    &:hover {
+      background-color: lighten(a.$strongCyan-clr, 30%);
+    }
+  }
+
+  @include a.media-breakpoint-up(63em) {
+    & {
+      margin-top: auto;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use "../abstracts" as a;
+.header {
+  @include a.flex;
+  padding-top: 3.1rem;
+  margin-bottom: 2.5rem;
+
+  @include a.media-breakpoint-up(63em) {
+    padding-top: 10.2rem;
+    margin-bottom: 5.5rem;
+  }
+}

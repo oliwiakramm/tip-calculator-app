@@ -1,0 +1,6 @@
+@use "../abstracts" as a;
+body {
+  min-height: 100vh;
+  font-family: a.$txt-font;
+  background-color: a.$lightGrayishCyan-clr;
+}

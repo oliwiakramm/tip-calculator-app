@@ -1,0 +1,4 @@
+@use "../abstracts" as a;
+h2 {
+  color: a.$darkGrayishCyan-clr;
+}

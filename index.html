@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        margin-top: 2rem;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(183, 100%, 15%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="visually-hidden">Tip calculator</h1>
+      <img src="images/logo.svg" alt="splitter" class="logo" />
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="tip__calculate">
+          <form>
+            <h2 class="visually-hidden">Put bill amount</h2>
+            <div class="input__container">
+              <label for="bill">Bill</label>
+              <input
+                type="number"
+                id="bill"
+                placeholder="0"
+                min="1"
+                class="bill__amount"
+              />
+            </div>
+            <fieldset>
+              <h2 class="tip__heading">Select Tip %</h2>
+              <div class="tip__options">
+                <input type="radio" name="tip" id="5" value="5" />
+                <label for="5" class="tip__btn">5%</label>
+
+                <input type="radio" name="tip" id="10" value="10" />
+                <label for="10" class="tip__btn">10%</label>
+
+                <input type="radio" name="tip" id="15" value="15" />
+                <label for="15" class="tip__btn">15%</label>
+
+                <input type="radio" name="tip" id="25" value="25" />
+                <label for="25" class="tip__btn">25%</label>
+
+                <input type="radio" name="tip" id="50" value="50" />
+                <label for="50" class="tip__btn">50%</label>
+
+                <input type="number" id="custom" placeholder="Custom" />
+                <label for="custom" class="visually-hidden">Custom tip %</label>
+              </div>
+            </fieldset>
+            <div class="input__container people__num">
+              <h2 class="visually-hidden">Put the number of people</h2>
+              <div class="text__container">
+                <p class="error__message">Can't be zero</p>
+                <label for="people">Number of People</label>
+              </div>
+              <input
+                type="number"
+                id="people"
+                placeholder="0"
+                min="1"
+                class="people__amount"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="tip__results">
+          <h2 class="visually-hidden">Tip and total number per person</h2>
+          <div class="result">
+            <div class="result__info">
+              <h2 class="result__heading">Tip Amount</h2>
+              <span class="result__person">/ person</span>
+            </div>
+            <p class="result__amount" id="tipAmount">&#36;0.00</p>
+          </div>
+          <div class="result">
+            <div class="result__info">
+              <h2 class="result__heading">Total</h2>
+              <span class="result__person">/ person</span>
+            </div>
+            <p class="result__amount" id="totalAmount">&#36;0.00</p>
+          </div>
+          <button class="resetBtn" disabled>Reset</button>
+        </div>
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/oliwiakramm">Hoshiko</a>.
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

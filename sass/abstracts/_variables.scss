@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+// Font Family
+$txt-font: "Space Mono", sans-serif;
+
+// Primary color
+$strongCyan-clr: hsl(172, 67%, 45%);
+
+//Neutral colors
+$veryDarkCyan-clr: hsl(183, 100%, 15%);
+$darkGrayishCyan-clr: hsl(186, 14%, 43%);
+$grayishCyan-clr: hsl(184, 14%, 56%);
+$lightGrayishCyan-clr: hsl(185, 41%, 84%);
+$veryLightGrayishCyan-clr: hsl(189, 41%, 97%);
+$white-clr: hsl(0, 0%, 100%);
+
+$transition: all 0.15s ease-in;
